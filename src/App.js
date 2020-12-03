@@ -1,26 +1,14 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+import Card from './Components/Card';
 
 class App extends Component {
   render() {
     const { bgColor, desc, children } = this.props;
     return (
-      <div className="App" style={{ backgroundColor: bgColor }} title={desc}>
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-          {children}
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="App">
+        <Card />
       </div>
     );
   }
@@ -60,7 +48,7 @@ export const LOL = 'LOL to fajne lalki'; */
 
 /*
 export {
-  fn,
+  fn as Stats,
 };
  */
 export default App;

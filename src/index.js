@@ -12,10 +12,6 @@ ReactDOM.render(
       <div>sdjlkfsdf</div>
       <p>fdfdsfs</p>
     </App>
-    <App bgColor="#000" desc={MSG}>
-      <p>sdjlkfsdf</p>
-      <span>fdfdsfs</span>
-    </App>
   </React.StrictMode>,
   document.getElementById('my-app')
 );
