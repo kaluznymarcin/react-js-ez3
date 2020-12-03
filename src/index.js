@@ -1,14 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App/* , { PI as shortPI, fn } */ from './App';
 import reportWebVitals from './reportWebVitals';
+
+const MSG = "Moja aplikacja w react";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App bgColor="#000" desc={MSG}>
+      <div>sdjlkfsdf</div>
+      <p>fdfdsfs</p>
+    </App>
+    <App bgColor="#000" desc={MSG}>
+      <p>sdjlkfsdf</p>
+      <span>fdfdsfs</span>
+    </App>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('my-app')
 );
 
 // If you want to start measuring performance in your app, pass a function
