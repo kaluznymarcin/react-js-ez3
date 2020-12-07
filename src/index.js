@@ -1,17 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App/* , { PI as shortPI, fn } */ from './App';
+import App from './Components/App';
 import reportWebVitals from './reportWebVitals';
 
 const MSG = "Moja aplikacja w react";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App bgColor="#000" desc={MSG}>
-      <div>sdjlkfsdf</div>
-      <p>fdfdsfs</p>
-    </App>
+    <App />
   </React.StrictMode>,
   document.getElementById('my-app')
 );
