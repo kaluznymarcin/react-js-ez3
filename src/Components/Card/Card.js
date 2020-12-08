@@ -1,9 +1,12 @@
 import React, { Component, useState } from 'react';
 
+const url = 'http://api.nbp.pl/api/exchangerates/rates/a/gbp/2020-01-01/2020-01-31/';
+
 class CardC extends Component {
   state = {
     num: 0,
     disabled: false,
+    data: undefined,
   }
 
   /* constructor() {
@@ -13,44 +16,37 @@ class CardC extends Component {
   } */
 
   componentDidMount() {
-    this.tout = setInterval(() => {
-      this.setState({ num: this.state.num + 1 });
-    }, 5 * 1000)
+    fetch(url)
+      .then(response => response.json())
+      .then(data => this.setState({ data }));
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.num % 2 === 0) {
-      console.log(this.state.num);
-    }
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.tout);
-  }
-
-  changeNum(delta = 1) {
-    return (e) => {
-      this.setState({ num: this.state.num + delta})
-    };
-  }
-
-  handlerPlus = () => {
-    this.setState({ num: this.state.num + 1})
-  }
-
-  handlerMinus = () => {
-    this.setState({ num: this.state.num - 1})
+  createRows(list) {
+    return Array.isArray(list) && list.map(
+      ({ no, effectiveDate, mid }, index) => (
+        <tr key={`${no}-${index}`}>
+          <td>{effectiveDate}</td>
+          <td>{mid}</td>
+        </tr>
+      )
+    )
   }
 
   render() {
+    const { data = {} } = this.state;
     return (
       <div>
-        <header>Card</header>
-        <div>{this.state.num}</div>
-        <footer>
-          <button type="button" onClick={this.handlerMinus}>-</button>
-          <button type="button" onClick={this.handlerPlus}>+</button>
-        </footer>
+        <header>
+          {data.code ? <h3>{data.code}</h3> : <div>Loading...</div>}
+        </header>
+        <table>
+          <thead>
+            <tr><th>data</th><th>cena</th></tr>
+          </thead>
+          <tbody>
+            {this.createRows(data.rates)}
+          </tbody>
+        </table>
       </div>
     );
   }

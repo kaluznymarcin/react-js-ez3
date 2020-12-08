@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 
 class CardC extends Component {
   state = {
@@ -34,13 +34,16 @@ class CardC extends Component {
     };
   }
 
-  handlerPlus = () => {
+  handlerPlus = e => {
     this.setState({ num: this.state.num + 1})
+    this.h()
   }
 
   handlerMinus = () => {
     this.setState({ num: this.state.num - 1})
   }
+
+  h = () => { console.log() }
 
   render() {
     return (
@@ -59,6 +62,20 @@ class CardC extends Component {
 const CardF = () => {
   const [num, setNum] = useState(0);
 
+  useEffect(() => {
+    let tout = undefined;
+
+    if (!tout) {
+      tout = setInterval(() => {
+        setNum(num + 1);
+      }, 5 * 1000);
+    }
+
+    return () => {
+      clearInterval(tout);
+    }
+  }, [num])
+
   return (
     <div>
       <header></header>
@@ -71,4 +88,4 @@ const CardF = () => {
   );
 }
 
-export default [CardF, CardC][Number(true)];
+export default [CardF, CardC][Number(false)];
