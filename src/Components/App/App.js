@@ -1,11 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
+import GridList from '../GridList'
 import './App.css';
 
 import Card from '../Card';
 
 const App = (props) =>  (
   <div>
-    <Card />
+    <GridList>
+      <Card />
+      <Card />
+    </GridList>
   </div>
 );
 
