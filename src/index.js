@@ -4,8 +4,6 @@ import './index.css';
 import App from './Components/App';
 import reportWebVitals from './reportWebVitals';
 
-const MSG = "Moja aplikacja w react";
-
 ReactDOM.render(
   <React.StrictMode>
     <App />
