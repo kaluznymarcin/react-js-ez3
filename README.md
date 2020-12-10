@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+### Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Przy użyciu Unsplash API: https://unsplash.com/developers, napisz aplikację do przeglądania obrazów.
 
-## Available Scripts
+Aplikacja ma posiadać następujące widoki:
 
-In the project directory, you can run:
+* **Lista sekcji**, zawierająca kilka wybranych sekcji z bazy zdjęć z miniaturami 10 najnowszych obrazów.
+* **Sekcja**, wyświetlająca listę miniatur wszystkich dostępnych obrazów z danej sekcji (opcja: z infinite scrollem).
+Użytkownik ma mieć możliwość wyboru sortowania: po najnowszych lub popularnych.
+Po najechaniu myszą przy każdej miniaturze powinna pokazywać się liczba ściągnięć, lików oraz państwo (jeśli jest dostępne).
+* **Pojedyncze zdjęcie**, wyświetlenie w dużym rozmiarze, wraz z dodatkowymi informacjami udostępnianymi przez api. Zdjęcie powinno się dać likować (opcja: sharować za pomocą Facebooka).
 
-### `yarn start`
+Aplikacja powinna zawierać routing i być responsywna. Zalecany stack technologiczny: ES6+, Node.js, React.js, React Router, Webpack, Babel, Styled Components lub Sass, inne wybrane przez developera.
+Wszelkie dodatkowe pomysły są mile widziane.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Praca:
 
-### `yarn test`
+* Kazda osba powinna załozyć repozytorium w github z projektem
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `yarn build`
+The first mistake is called Callback Hell. This is a pattern in which each callback function contains the code to request the next unit of work. That request provides a callback that also requests another unit of work, and so on. Programs written this way are difficult to read, difficult to maintain, and brittle.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The second mistake is called Promises. In their original form, promises were brilliant. They were created to support the development of secure, distributed programs. Unfortunately, when promises migrated to JavaScript, they lost all of their new paradigm features. All that is left is an awkward control flow mechanism. Promises were not designed to manage local control flow, which is why they do not do it very well. They are definitely an improvement over callback hell, but they are not satisfactual.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The third mistake is called Async Await. It is a pair of keywords that are used to decorate ordinary sequential code and magically transform it into eventual code. It is similar to ES6 generators in that the code you write is quite different than the code you get. To its credit, it masks much of the disappointment of promises. The thing that is most liked about async await is that you can continue to write in the style of the old paradigm. That is also the biggest problem with it.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The new paradigm is important. Understanding the new paradigm can be difficult because it is new, but that is how we make progress. Async await gives us a way to be productive without actually making progress. Its users are writing code that they do not fully understand. That is never a good thing. A growing problem is coders who are putting the async and await decorators everywhere. Because they do not understand what they do, they do not understand how to use them well. We should not be trying to deny or hide the next paradigm. We should be embracing it.
 
-### `yarn eject`
+Something that all three mistakes have in common is the tight coupling of logic and control flow. That yields poor cohesion because too many disparate activities are pasted together. It is better to separate them.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Douglas Crockford. „How JavaScript Works”
