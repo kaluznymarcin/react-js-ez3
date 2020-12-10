@@ -1,7 +1,7 @@
 import './gridlist.css';
 
-const GridList = ({ children }) => (
-  <div class="grid-list">
+const GridList = ({ children, bgColor }) => (
+  <div class="grid-list" style={{ backgroundColor: bgColor }}>
     {children}
   </div>
 );

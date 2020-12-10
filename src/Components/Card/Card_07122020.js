@@ -18,7 +18,8 @@ class CardC extends Component {
   componentDidMount() {
     fetch(url)
       .then(response => response.json())
-      .then(data => this.setState({ data }));
+      .then(data => this.setState({ data }))
+      .catch(error => console.error(error));
   }
 
   createRows(list) {
