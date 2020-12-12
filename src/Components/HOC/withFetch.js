@@ -5,9 +5,22 @@ import {
 } from '../../constants';
 
 const map = {
-  "/section/:id": '/collections/:id/photos?per_page=:perPage',
-  "/photo/:id": '/photos/:id',
+  "/sctions": "/collections",
+  "/section/:id": "/collections/:id",
+  "/photo/:id": "/photos/:id",
 };
+
+const fillPath = (path, params) => path.replace(
+  /[:*](\w+)/g,
+  ($0, $1) => {
+    return params[$1]
+  }
+);
+
+const _fillPath = (path, params) => Object.entries(params).reduce(
+  (acc, [key, value]) => acc.replace(`:${key}`, value),
+  path
+);
 
 const withFetch = BaseComponent => class extends Component {
   state = {
@@ -15,8 +28,10 @@ const withFetch = BaseComponent => class extends Component {
   }
 
   componentDidMount() {
-    const { params, path } = this.props.match
-    fetch(`${UNSPLASH_BASE_URL}${fillPath(params, map[path])}`, {
+    const { params, path } = this.props.match;
+    const url = fillPath(map[path], params);
+    console.log(url);
+    fetch(`${UNSPLASH_BASE_URL}${url}`, {
       headers: UNSPLASH_COMMON_HEADERS
     })
       .then(response => response.json())

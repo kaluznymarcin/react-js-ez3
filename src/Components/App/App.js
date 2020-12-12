@@ -5,16 +5,10 @@ import {
   Route,
   Link
 } from 'react-router-dom';
-// import GridList from '../GridList'
 import './App.css';
-
-import Card from '../Card';
-import withBgColorChange from '../HOC/withBgColorChange';
 
 import Sections from '../Sections';
 import Section from '../Section';
-
-const CartWithBg = withBgColorChange(Card);
 
 const App = (props) =>  (
   <Router>
