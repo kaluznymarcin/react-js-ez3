@@ -1,17 +1,20 @@
 import { withRouter } from 'react-router-dom';
+import Card from './Card'
+import GridList from './GridList';
+import listFactory from './listFactory';
 import withFetch from './HOC/withFetch';
+import withLink from './HOC/withLink'
 
-const Section = (props) => {
-  console.log('Section :: ', props);
+
+const CardWithLink = withLink('/photos/:id')(Card);
+
+const Sections = ({ data }) => {
+  console.log(' SECTION :: ', data);
   return (
-    <div>
-      Section
-    </div>
+    <GridList>
+      {listFactory(CardWithLink, data)}
+    </GridList>
   );
 }
 
-export default withRouter(
-  withFetch(
-    Section
-  )
-);
+export default withRouter(withFetch(Sections));

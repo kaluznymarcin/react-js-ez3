@@ -1,12 +1,15 @@
 import CardHeader from './CardHeader';
-import CardFooter from './CardFooter'
+import CardFooter from './CardFooter';
+import CardContent from './CardContent';
 import './card.css';
 
-const Card = ({ bgColor, title = 'LOL', time }) => (
-  <div className="card" style={{ backgroundColor: bgColor || '#fff' }}>
-    <CardHeader>{title}</CardHeader>
-    <a href="/sections">Sekcje</a>
-    <CardFooter>Ala {time}</CardFooter>
+const Card = ({ data: { cover_photo, title, total_photos } }) => (
+  <div className="card">
+    {title && <CardHeader>{title}</CardHeader>}
+    <CardContent>Cover Photo</CardContent>
+    <CardFooter>
+      {total_photos && <div>Liczba zdjęć: {total_photos}</div>}
+    </CardFooter>
   </div>
 );
 
