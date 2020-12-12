@@ -1,9 +1,9 @@
 import { withRouter } from 'react-router-dom';
 import Card from './Card'
-import GridList from './GridList';
-import listFactory from './listFactory';
-import withFetch from './HOC/withFetch';
-import withLink from './HOC/withLink'
+import GridList from '../GridList';
+import listFactory from '../listFactory';
+import withFetch from '../HOC/withFetch';
+import withLink from '../HOC/withLink'
 
 
 const CardWithLink = withLink('/photos/:id')(Card);

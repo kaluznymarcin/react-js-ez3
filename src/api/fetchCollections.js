@@ -5,8 +5,6 @@ const COLLECTIONS_PATH = '/collections';
 
 const fetchCollections = (params, success) => {
   const output = asyncApiFetch(fillPath(COLLECTIONS_PATH, params));
-  console.log(output);
-
   return output.then(success);
 }
   /* apiFetch(fillPath(COLLECTIONS_PATH, params))

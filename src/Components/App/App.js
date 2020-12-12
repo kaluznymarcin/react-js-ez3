@@ -9,6 +9,7 @@ import './App.css';
 
 import Sections from '../Sections';
 import Section from '../Section';
+import Photo from '../Photo';
 
 const App = (props) =>  (
   <Router>
@@ -22,7 +23,7 @@ const App = (props) =>  (
         <Section />
       </Route>
       <Route path="/photo/:id">
-        <div>Photo</div>
+        <Photo />
       </Route>
       <Route path="/">
         <Sections  />

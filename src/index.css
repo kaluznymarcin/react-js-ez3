@@ -16,3 +16,7 @@ table, th, td {
   border: 1px solid #999;
   padding: 3px;
 }
+
+a {
+  text-decoration: none;
+}
