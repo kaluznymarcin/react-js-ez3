@@ -4,18 +4,23 @@ import CardHeader from '../Card/CardHeader';
 import CardContent from '../Card/CardContent';
 import CardFooter from '../Card/CardFooter';
 
-const SectionsCard = ({ data }) => (
-  <Card>
-    <CardHeader>
-      <h3>{data.title}</h3>
-    </CardHeader>
-    <CardContent>
-      <img src={data.cover_photo.urls.small} alt="" />
-    </CardContent>
-    <CardFooter>
-      Liczba zdjęć: {data.total_photos}
-    </CardFooter>
-  </Card>
-);
+import selector from './selector';
+
+const SectionsCard = ({ data }) => {
+  const { img, title, total_photos } = selector(data);
+  return (
+    <Card>
+      <CardHeader>
+        <h3>{title}</h3>
+      </CardHeader>
+      <CardContent>
+        <img src={img.src} alt="" />
+      </CardContent>
+      <CardFooter>
+        Liczba zdjęć: {total_photos}
+      </CardFooter>
+    </Card>
+  );
+};
 
 export default withLink('/section/:id')(SectionsCard);
