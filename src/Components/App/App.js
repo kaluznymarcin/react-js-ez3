@@ -7,12 +7,15 @@ import {
 } from 'react-router-dom';
 import './App.css';
 
+import Backdrop from '../Backdrop';
+
 import Sections from '../Sections';
 import Section from '../Section';
 import Photo from '../Photo';
 
 const App = (props) =>  (
   <Router>
+    <Backdrop />
     <div>
       <Link to="/">Sections</Link><br />
       <Link to="/section/37284328">Section</Link><br />
